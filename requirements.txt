@@ -1,0 +1,5 @@
+python-dotenv
+pandas
+pyarrow
+upstox-python-sdk
+python-dotenv
