@@ -18,14 +18,12 @@ class ParquetStorage:
         """
         Generates the full path for a Parquet file for a given instrument, timeframe, and date.
         """
-        market = instrument_key.split("|")[0]
         year_str = date.strftime("%Y")
         month_str = date.strftime("%m")
         file_date_str = date.strftime("%Y-%m-%d")
 
         output_dir = os.path.join(
             self.base_directory,
-            market,
             timeframe,
             instrument_key.replace("|", "_"),
             year_str,
