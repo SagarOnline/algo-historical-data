@@ -13,9 +13,9 @@
 **Initial Data Storage:** Store data in Parquet files. Plan to enhance storage to a time-series database in future.
 
 **Functionality:** 
-* On execution, the application checks existing stored historical data for any missing records.
-* Fetches and stores missing data when found.
-* Runs periodically at End of Day (EOD) to fetch and store the current day’s data.
+* Upon execution, the application verifies the existing stored historical data to identify any missing records.
+* When missing data is detected, it is fetched and stored. For the Parquet implementation, files are saved in the directory specified by the HISTORICAL_DATA_DIRECTORY environment variable. The directory structure follows the format {timeframe}/{instrument_key}/{year}/{month}, and files are named as yyyy-mm-dd.parquet.
+* The process runs daily at End of Day (EOD) to retrieve and store the current day’s data.
 
 **Usage:**  The stored historical data will be used for backtesting and executing algorithmic trading strategies.
 
